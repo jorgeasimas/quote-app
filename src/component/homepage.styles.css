@@ -1,0 +1,148 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 25px;
+}
+
+.card-quote {
+  width: 40vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  position: relative;
+}
+
+.card-list {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card-container-quote {
+  display: flex;
+  flex-direction: column;
+  background-color: #c9ec2c;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #95dada;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.card-container-quote:hover {
+  transform: scale(1.05);
+}
+
+.search {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 150px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+/*
+.sign-in{
+
+  position: relative;
+  top: 80%;
+  width: 45%;
+  display: flex;
+  margin: 30px auto 0;
+  flex-direction: column;
+
+  .title{
+      margin: 10px 10px;
+  }
+  .buttons {
+      display: flex;
+      justify-content: space-between;
+  }
+}
+
+
+$sub-color: white;
+$main-color: black;
+
+@mixin shrinkLabel {
+  left: 1px;
+  font-size: 10px;
+  color: $main-color;
+}
+
+.group {
+  align-items: center;
+  position: relative;
+  margin: 5px 50px;
+
+
+  .form-input {
+    background: none;
+    align-items: center;
+    color: $sub-color;
+    margin: 5px 50px;
+    font-size: 14px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 25%;
+    border: none;
+    border-radius: none;
+    border-bottom: 1px solid $sub-color;
+
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+
+  .form-input-label {
+    color: $sub-color;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: -10px;
+    top: 2px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}
+
+*/
