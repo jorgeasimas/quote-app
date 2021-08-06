@@ -12,6 +12,7 @@ function Home () {
   const [data, setData] = useState([])
   const [quote, setQuote] = useState("A little more persistence, a little more effort, and what seemed hopeless failure may turn to glorious success.")
   const [author, setAuthor] = useState("Elbert Hubbard")
+  const [id, setId] = useState(0)
 
  
   useEffect(()  => { 
@@ -23,8 +24,10 @@ function Home () {
 
   function handleClick() {
     if(task !== "") {
-    setList([...list, {task: task}])
+    setId(previous => previous +1)    
+    setList([...list, {task: task, id: id}])
     setTask('')
+    console.log(list)
     }
     else {
       alert("please fill out field")
@@ -39,6 +42,22 @@ function Home () {
     setQuote(data[round].text)
     setAuthor(data[round].author)
   }
+
+/*
+  const removeItem = (index) => {
+      const newL = [...list]
+      newL.splice(index, 1)
+      setList(newL)
+
+  } 
+*/
+
+  function removeItem (item) {
+    const newL = list.filter((lst) => lst.id !== item) // it loops over list array and check each item if is same as item passed, 
+    //will filter to a final array with items that are different of items passed
+    setList(newL)
+
+} 
 
   return(
      <div className="App">
@@ -65,8 +84,10 @@ function Home () {
         <br></br>             
         <div className="card-list">{list.map((newlist, index) => (
           <div className="card-container">
+               <div className='remove-button' onClick={() => removeItem(newlist.id)}>&#10005;</div>
                 <h1>Note</h1><p>{newlist.task}</p>
-          </div>   
+                <p>{newlist.id}</p>
+              </div>   
       ))}
       </div> 
       <br></br> 

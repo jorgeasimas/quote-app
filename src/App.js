@@ -5,7 +5,7 @@ import Home from './component/home-page.component';
 
 export default function App() {
   return (
-    <div class="App">
+    <div className="App">
         <Home />   
 
     </div>
